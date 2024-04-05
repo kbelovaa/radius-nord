@@ -72,8 +72,7 @@
 }
 
 .invalid .invalid-field {
-  border: 1px solid #bd3333;
-  box-shadow: 0px 0px 10px 0px rgba(132, 14, 14, 0.41);
+  border: 1px solid #BC0000;
 }
 
 .label {
@@ -95,15 +94,20 @@
 .message {
   font-family: 'SF Pro Display', sans-serif;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
-  line-height: 90%;
-  letter-spacing: -0.48px;
-  margin-top: 7px;
+  line-height: 130%;
+  letter-spacing: 0.28px;
   animation: fadeIn 0.3s ease-in;
 
+  &_fill {
+    text-align: center;
+    margin-top: 10px;
+  }
+
   @media screen and (max-width: 744px) {
-    font-size: 14px;
+    font-size: 12px;
+    letter-spacing: 0.24px;
   }
 }
 

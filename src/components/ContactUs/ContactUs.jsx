@@ -111,7 +111,7 @@ const ContactUs = () => {
                   e.target.style.height = `${e.target.scrollHeight + 2}px`;
                 }}
               ></textarea>
-              {!isFormValid && (!name || !email || !phone) && <p className="message">Please fill in all fields</p>}
+              {!isFormValid && (!name || !email || !phone) && <p className="message message_fill">Please fill in all fields</p>}
             </div>
             {loading ? (
               <div className="spinner spinner_small"></div>
