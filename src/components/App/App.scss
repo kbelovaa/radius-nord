@@ -1,0 +1,180 @@
+.hidden {
+  display: none;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1440px) {
+    width: 1024px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 744px;
+  }
+
+  @media screen and (max-width: 744px) {
+    width: 100%;
+  }
+}
+
+.content {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.input {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  padding: 18px 16px;
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.36px;
+  transition: all 0.3s ease;
+  height: 59px;
+  margin-top: 10px;
+  width: 100%;
+
+  @media screen and (max-width: 744px) {
+    height: 52px;
+  }
+
+  &:active,
+  &:focus,
+  &:focus-visible {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.25);
+  }
+
+  &-wrap {
+    width: 100%;
+    margin-bottom: 10px;
+
+    & textarea {
+      resize: none;
+      min-height: 100px;
+      max-height: 300px;
+
+      @media screen and (max-width: 1440px) {
+        max-height: 400px;
+      }
+
+      @media screen and (max-width: 744px) {
+        max-height: 250px;
+      }
+    }
+  }
+}
+
+.invalid .invalid-field {
+  border: 1px solid #bd3333;
+  box-shadow: 0px 0px 10px 0px rgba(132, 14, 14, 0.41);
+}
+
+.label {
+  color: #fff;
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 130%;
+  letter-spacing: 0.36px;
+  margin-bottom: 5px;
+
+  @media screen and (max-width: 744px) {
+    font-size: 16px;
+    letter-spacing: 0.32px;
+  }
+}
+
+.message {
+  font-family: 'SF Pro Display', sans-serif;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 90%;
+  letter-spacing: -0.48px;
+  margin-top: 7px;
+  animation: fadeIn 0.3s ease-in;
+
+  @media screen and (max-width: 744px) {
+    font-size: 14px;
+  }
+}
+
+.btn {
+  border-radius: 4px;
+  border: none;
+  background: #0e2f4d;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 32px;
+  height: 52px;
+  line-height: 52px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+
+  &.inactive {
+    background: #0e2f4d;
+    color: #315472;
+    cursor: default;
+
+    &:hover,
+    &:active {
+      background: #0e2f4d;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 10px 0px rgba(6, 35, 61, 0.5);
+  }
+
+  &:active {
+    background: #09253e;
+    box-shadow: none;
+  }
+}
+
+.spinner {
+  margin: 100px auto 0;
+  border: 10px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border-top: 10px solid #fff;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+
+  &_small {
+    width: 53px;
+    height: 53px;
+    margin: 0;
+    border-width: 7px;
+    margin-top: 10px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

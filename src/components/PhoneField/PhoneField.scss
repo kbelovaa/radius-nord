@@ -1,0 +1,68 @@
+.react-tel-input {
+  & .form-control {
+    border-radius: 4px;
+    border: 1px solid #ccd5d2;
+    background: transparent;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: normal;
+    transition: all 0.3s ease;
+    color: #3a3a3a;
+    width: 100%;
+    padding-left: 55px;
+    height: 56px;
+
+    @media screen and (max-width: 744px) {
+      height: 54px;
+      font-size: 18px;
+    }
+
+    &::placeholder {
+      color: #c0c0c0;
+    }
+
+    &.default {
+      padding-left: 16px;
+    }
+
+    &:focus {
+      border-color: #51ca9f;
+
+      .invalid &.invalid-field {
+        border-color: #a51f1f;
+      }
+
+      & + .flag-dropdown {
+        border-color: #51ca9f;
+      }
+    }
+  }
+
+  & .flag-dropdown {
+    background-color: #f4f9f7;
+    border: 1px solid #ccd5d2;
+    border-right: none;
+    padding: 5px;
+    transition: all 0.3s ease;
+
+    &.open,
+    &.open .selected-flag {
+      background: #f4f9f7;
+    }
+
+    .invalid &.invalid-field {
+      border: 1px solid #a51f1f;
+      border-right: none;
+    }
+  }
+
+  & .country-list {
+    margin: 15px 0 10px -6px;
+  }
+
+  & .selected-flag:hover,
+  & .selected-flag:focus {
+    background: #f4f9f7;
+  }
+}

@@ -1,0 +1,114 @@
+.confirmation {
+  margin: 0 auto;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  width: 510px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 1440px) {
+    width: 546px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 534px;
+  }
+
+  @media screen and (max-width: 744px) {
+    width: 100%;
+    max-width: 358px;
+    padding: 20px;
+  }
+
+  &-section {
+    min-height: 1000px;
+    padding-top: 100px;
+
+    @media screen and (max-width: 1440px) {
+      min-height: 1025px;
+      padding-top: 60px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      min-height: 1050px;
+      padding-top: 80px;
+    }
+
+    @media screen and (max-width: 744px) {
+      min-height: 796px;
+      padding: 60px 16px 0;
+    }
+  }
+
+  &__tick {
+    @media screen and (max-width: 744px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__text {
+    margin: 20px 0;
+    color: #fff;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.48px;
+    text-align: center;
+
+    @media screen and (max-width: 1440px) {
+      margin: 10px 0;
+    }
+
+    @media screen and (max-width: 744px) {
+      font-size: 20px;
+      letter-spacing: 0.4px;
+    }
+  }
+
+  &__link {
+    color: #fff;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 130%;
+    letter-spacing: 0.4px;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &::after {
+      display: block;
+      content: '';
+      background: #fff;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      color: #83b8e7;
+    }
+
+    &:hover::after {
+      background: #83b8e7;
+    }
+
+    &:active,
+    &:focus,
+    &:focus-visible {
+      color: #497296;
+
+      &::after {
+        background: #497296;
+      }
+    }
+  }
+}
