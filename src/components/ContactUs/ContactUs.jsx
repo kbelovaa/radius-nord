@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import sendData from '../../http/sendData';
+import PhoneField from '../PhoneField/PhoneField';
 import './ContactUs.scss';
 
 const ContactUs = () => {
@@ -8,6 +9,7 @@ const ContactUs = () => {
   const [email, setEmail] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [phone, setPhone] = useState('');
+  const [isPhoneValid, setIsPhoneValid] = useState(true);
   const [text, setText] = useState('');
   const [isFormValid, setIsFormValid] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -22,7 +24,7 @@ const ContactUs = () => {
   };
 
   const checkIsFormValid = () => {
-    if (name && email && isEmailValid && phone) {
+    if (name && email && isEmailValid && phone && isPhoneValid) {
       return true;
     }
 
@@ -88,18 +90,12 @@ const ContactUs = () => {
               />
               {!isEmailValid && <p className="message">Please enter a valid email address</p>}
             </div>
-            <div className="input-wrap">
-              <label htmlFor="mobile" className="label">
-                Mobile nr*
-              </label>
-              <input
-                id="mobile"
-                type="text"
-                className={`input ${!isFormValid && !phone && 'invalid-field'}`}
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            </div>
+            <PhoneField
+              mobile={phone}
+              setMobile={setPhone}
+              isMobileValid={isPhoneValid}
+              setIsMobileValid={setIsPhoneValid}
+            />
             <div className="input-wrap">
               <label htmlFor="text" className="label">
                 Text
@@ -120,7 +116,7 @@ const ContactUs = () => {
             {loading ? (
               <div className="spinner spinner_small"></div>
             ) : (
-              <button className="btn contact-us__btn" type="submit">
+              <button className={`btn contact-us__btn ${checkIsFormValid() ? '' : 'inactive'}`} type="submit">
                 Submit
               </button>
             )}

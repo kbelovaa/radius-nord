@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import PhoneInput from 'react-phone-input-2';
 import { isValidNumber } from 'libphonenumber-js';
 import 'react-phone-input-2/lib/style.css';
@@ -7,8 +6,6 @@ import './PhoneField.scss';
 
 const PhoneField = ({ mobile, setMobile, isMobileValid, setIsMobileValid }) => {
   const ipCountry = localStorage.getItem('countryCode');
-
-  const { t } = useTranslation();
 
   const handleMobileChange = (value, country) => {
     setMobile(value);
@@ -19,9 +16,9 @@ const PhoneField = ({ mobile, setMobile, isMobileValid, setIsMobileValid }) => {
   };
 
   return (
-    <div className="phone-field">
-      <label htmlFor="mobile" className="form__label">
-        Phone nr
+    <div className="input-wrap">
+      <label htmlFor="mobile" className="label">
+        Mobile nr*
       </label>
       <PhoneInput
         value={mobile}
@@ -32,7 +29,7 @@ const PhoneField = ({ mobile, setMobile, isMobileValid, setIsMobileValid }) => {
         buttonClass={`${!ipCountry && !mobile ? 'hidden' : ''} ${!mobile || !isMobileValid ? 'invalid-field' : ''}`}
         autoFormat
       />
-      <p className={isMobileValid ? 'hidden' : 'form__note'}>{t('enterValidMobile')}</p>
+      <p className={isMobileValid ? 'hidden' : 'message'}>Please enter a valid mobile number</p>
     </div>
   );
 };

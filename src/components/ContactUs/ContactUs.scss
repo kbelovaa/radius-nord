@@ -5,6 +5,7 @@
   align-items: center;
   height: 1000px;
   min-height: calc(100vh - 236px);
+  animation: fadeIn 0.3s ease-in;
 
   @media screen and (max-width: 1440px) {
     height: 1025px;

@@ -1,21 +1,20 @@
 .react-tel-input {
   & .form-control {
     border-radius: 4px;
-    border: 1px solid #ccd5d2;
-    background: transparent;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
     font-family: 'SF Pro Display', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
-    line-height: normal;
+    line-height: 130%;
     transition: all 0.3s ease;
-    color: #3a3a3a;
+    color: #fff;
     width: 100%;
     padding-left: 55px;
     height: 56px;
 
     @media screen and (max-width: 744px) {
-      height: 54px;
-      font-size: 18px;
+      height: 52px;
     }
 
     &::placeholder {
@@ -27,33 +26,35 @@
     }
 
     &:focus {
-      border-color: #51ca9f;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.25);
 
       .invalid &.invalid-field {
-        border-color: #a51f1f;
+        border: 1px solid #bd3333;
+        box-shadow: 0px 0px 10px 0px rgba(132, 14, 14, 0.41);
       }
 
       & + .flag-dropdown {
-        border-color: #51ca9f;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-right: none;
       }
     }
   }
 
   & .flag-dropdown {
-    background-color: #f4f9f7;
-    border: 1px solid #ccd5d2;
-    border-right: none;
+    background: transparent;
+    border: none;
     padding: 5px;
-    transition: all 0.3s ease;
 
     &.open,
     &.open .selected-flag {
-      background: #f4f9f7;
+      background: transparent;
     }
 
     .invalid &.invalid-field {
-      border: 1px solid #a51f1f;
+      border: 1px solid #bd3333;
       border-right: none;
+      box-shadow: none;
     }
   }
 
@@ -63,6 +64,6 @@
 
   & .selected-flag:hover,
   & .selected-flag:focus {
-    background: #f4f9f7;
+    background: transparent;
   }
 }
