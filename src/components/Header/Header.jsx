@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import background1440 from '../../images/background1440.png';
 import background1024 from '../../images/background1024.png';
 import background744 from '../../images/background744.png';
@@ -10,6 +10,8 @@ import './Header.scss';
 
 const Header = () => {
   const [backgroundImg, setBackgroundImg] = useState(background1440);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -42,8 +44,10 @@ const Header = () => {
       <header className="header-section">
         <div className="container">
           <div className="header">
-            <img className="header__logo" src={logo} alt="First sl" />
-            <span className="header__text">RadiusNord</span>
+            <div className="header__logo-wrap" onClick={() => navigate('/')}>
+              <img className="header__logo" src={logo} alt="First sl" />
+              <span className="header__text">RadiusNord</span>
+            </div>
           </div>
         </div>
       </header>

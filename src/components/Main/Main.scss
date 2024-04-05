@@ -3,20 +3,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 1000px;
+  height: 1000px;
+  min-height: calc(100vh - 236px);
 
   @media screen and (max-width: 1440px) {
-    min-height: 1025px;
+    height: 1025px;
+    min-height: calc(100vh - 213px);
     padding-top: 90px;
   }
 
   @media screen and (max-width: 1024px) {
-    min-height: 1050px;
+    height: 1050px;
+    min-height: calc(100vh - 188px);
     padding-top: 120px;
   }
 
   @media screen and (max-width: 744px) {
-    min-height: 796px;
+    height: 796px;
+    min-height: calc(100vh - 350px);
     padding: 60px 16px 0;
   }
 
