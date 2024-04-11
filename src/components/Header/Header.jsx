@@ -24,7 +24,7 @@ const Header = () => {
         case width <= 1024:
           setBackgroundImg(background744);
           break;
-        case width <= 1040:
+        case width <= 1440:
           setBackgroundImg(background1024);
           break;
         default:
